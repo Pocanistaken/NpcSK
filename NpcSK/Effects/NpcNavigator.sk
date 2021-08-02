@@ -22,7 +22,7 @@ effect [(sknpc|npc)] make citizen (with id|id) %integer% (go|move|travel) to [th
         {_npc}.getNavigator().setTarget(expr-2)
 
 
-effect [(sknpc|npc)] make citizen (with id|id) %integer% follow to [the] %entity% [with speed %number%] [and] [make aggressive level] [to] %boolean%:
+effect [(sknpc|npc)] make citizen (with id|id) %integer% follow to [the] %entity% [with speed %number%] [and] [make aggressive level] [to] [%boolean%]:
   trigger:
     if expression-1 is set:
       if expression-2 is set:

@@ -1,0 +1,10 @@
+import:
+  net.citizensnpcs.api.CitizensAPI
+  
+condition npc %integer% is paused:
+    check:
+      set {_npc} to CitizensAPI.getNPCRegistry().getById(expr-1) 
+      if {_npc}.getNavigator().isPaused() is true:
+        continue
+      stop
+

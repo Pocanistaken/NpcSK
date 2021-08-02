@@ -1,7 +1,7 @@
 import:
   net.citizensnpcs.api.CitizensAPI
 
-effect [(sknpc|npc)] set fly mode [of] npc (with id|id) %integer% to %boolean%:
+effect [(sknpc|npc)] set fly mode [of] (npc|citizen) (with id|id) %integer% to %boolean%:
   trigger:
     if expression-1 is set:
       if expression-2 is set:

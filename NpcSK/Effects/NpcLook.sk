@@ -3,7 +3,7 @@ import:
   net.citizensnpcs.trait.LookClose
 
 
-effect [(sknpc|npc)] look %boolean% (with id|id) %integer%:
+effect [(sknpc|npc)] look others [to] %boolean% (with id|id) %integer%:
   trigger:
     if expression-1 is set:
       if expression-2 is set:
