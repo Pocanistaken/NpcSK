@@ -1,0 +1,10 @@
+import:
+  net.citizensnpcs.api.CitizensAPI
+  net.citizensnpcs.trait.LookClose
+
+expression [(sknpc|npc)] look status [(with id|id)] %integer%:
+  return type: boolean
+  get:
+    if expression-1 is set:
+      set {_npc} to CitizensAPI.getNPCRegistry().getById(expr-1) 
+      return {_npc}.lookClose() 

@@ -1,0 +1,32 @@
+import:
+  net.citizensnpcs.api.CitizensAPI
+
+  
+effect [(sknpc|npc)] (0¦pause|1¦continue) navigation of citizen (with id|id) %integer%:
+  trigger:
+    if expression-1 is set:
+      set {_npc} to CitizensAPI.getNPCRegistry().getById(expr-1) 
+      parser mark is 0:
+        {_npc}.getNavigator().setPaused(true)
+    else:
+      {_npc}.getNavigator().setPaused(true)
+
+
+effect [(sknpc|npc)] make citizen (with id|id) %integer% (go|move|travel) to [the] %location% [with speed %number%]:
+  trigger:
+    if expression-1 is set:
+      if expression-2 is set:
+        set {_npc} to CitizensAPI.getNPCRegistry().getById(expr-1) 
+        {_npc}.getNavigator().cancelNavigation()
+        {_npc}.getNavigator().getDefaultParameters().baseSpeed(expr-3 ? 1)
+        {_npc}.getNavigator().setTarget(expr-2)
+
+
+effect [(sknpc|npc)] make citizen (with id|id) %integer% follow to [the] %entity% [with speed %number%] [and] [make aggressive level] [to] %boolean%:
+  trigger:
+    if expression-1 is set:
+      if expression-2 is set:
+        set {_npc} to CitizensAPI.getNPCRegistry().getById(expr-1) 
+        {_npc}.getNavigator().cancelNavigation()
+        {_npc}.getNavigator().getDefaultParameters().baseSpeed(expr-3 ? 1)
+        {_npc}.getNavigator().setTarget(expr-2, expr-4 ? false)      

@@ -1,0 +1,11 @@
+import:
+  net.citizensnpcs.api.CitizensAPI
+  org.bukkit.entity.EntityType
+  net.citizensnpcs.api.event.NPCSpawnEvent
+
+effect [(sknpc|npc)] (create|register) (with name|named) %text%:
+  trigger:
+    if expression-1 is set:
+      set {_npc} to CitizensAPI.getNPCRegistry().createNPC(EntityType.PLAYER, expression-1)       
+
+

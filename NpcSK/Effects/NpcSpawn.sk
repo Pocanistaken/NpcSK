@@ -1,0 +1,14 @@
+import:
+  net.citizensnpcs.api.CitizensAPI
+
+effect [(sknpc|npc)] spawn (with id|id) %integer% at %location%:
+  trigger:
+    if expression-1 is set:
+      if expression-2 is set:
+        set {_npc} to CitizensAPI.getNPCRegistry().getById(expr-1) 
+        {_npc}.despawn()
+        {_npc}.spawn(expression-2)
+
+
+
+

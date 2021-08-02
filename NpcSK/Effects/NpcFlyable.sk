@@ -1,0 +1,11 @@
+import:
+  net.citizensnpcs.api.CitizensAPI
+
+effect [(sknpc|npc)] set fly mode [of] npc (with id|id) %integer% to %boolean%:
+  trigger:
+    if expression-1 is set:
+      if expression-2 is set:
+        set {_npc} to CitizensAPI.getNPCRegistry().getById(expr-1) 
+        {_npc}.setFlyable(expression-2)
+
+

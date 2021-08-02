@@ -1,0 +1,16 @@
+import:
+    net.citizensnpcs.api.CitizensAPI
+    net.citizensnpcs.api.npc.NPC
+    
+effect [(sknpc|npc)] set skin of citizen [with id] %integer% to %string%:
+  trigger:
+    if expression-1 is set:
+      if expression-2 is set:
+        set {_npc} to CitizensAPI.getNPCRegistry().getById(expr-1)
+        {_npc}.data().setPersistent(NPC.PLAYER_SKIN_UUID_METADATA and expr-2)
+        {_npc}.data().setPersistent(NPC.PLAYER_SKIN_USE_LATEST and false)
+        {_npc}.despawn()
+        {_npc}.spawn({_npc}.getStoredLocation())
+
+
+

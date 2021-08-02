@@ -1,0 +1,10 @@
+import:
+  net.citizensnpcs.api.CitizensAPI
+
+effect [(sknpc|npc)] (remove|destroy) (with id|id) %integer%:
+  trigger:
+    if expression-1 is set:
+      set {_npc} to CitizensAPI.getNPCRegistry().getById(expr-1) 
+      {_npc}.destroy()
+
+
